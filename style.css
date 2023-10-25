@@ -1,0 +1,70 @@
+
+body {
+    background-color: rgb(176, 176, 244);
+}
+
+.main-container {
+    width: 50%;
+    margin: auto;
+}
+
+#text {
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.list-items{
+    display: flex;
+}
+
+#add-btn {
+    border-radius: 0 5px 5px 0;
+    background-color: blue;
+    border: none
+}
+
+#add-btn:hover {
+    background-color: azure;
+    cursor: pointer;
+}
+
+.checkBtn, .removeBtn{
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+}
+
+.checkBtn:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+.removeBtn:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.list-items {
+    list-style-type: none;
+    padding: 5px;
+    background-color: beige;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.remove{
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
