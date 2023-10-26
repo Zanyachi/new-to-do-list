@@ -21,31 +21,48 @@ function addFun(){
         event.preventDefault();
     }
     else{
-       
+
+        // Creating and appending elements
+
+        const todoDiv = document.createElement('div');
         const li = document.createElement('li');
-        ul.append(li);
+        ul.append(todoDiv);
+        todoDiv.classList.add('todo');
+        todoDiv.append('li');
         li.setAttribute('class', 'list-items');
-        li.innerText = input.value;
+        todoDiv.innerText = input.value;
+        let firstClick = true;
+
+        // creating check and delete buttons
             
         let checkBtn = document.createElement('button');
-        li.appendChild(checkBtn);
+        todoDiv.appendChild(checkBtn);
         checkBtn.innerText = '+'
         checkBtn.setAttribute('class', 'checkBtn');
-        checkBtn.style.backgroundColor = 'green';
+        checkBtn.style.backgroundColor = 'yellowgreen';
         checkBtn.addEventListener('click', function(){
-            li.style.textDecoration = 'line-through'
-            li.style.fontStyle = 'italic'
+
+           if (firstClick){
+            todoDiv.style.textDecoration = 'line-through';
+            todoDiv.style.fontStyle = 'italic';
+           }
+           else{
+            todoDiv.style.textDecoration = 'none';
+            todoDiv.style.fontStyle = 'normal';
+           }
+
+           firstClick = !firstClick;
         })
 
         let removeBtn = document.createElement('button');
-        li.appendChild(removeBtn);
+        todoDiv.appendChild(removeBtn);
         removeBtn.innerText = '-';
         removeBtn.setAttribute('class', 'removeBtn');
-        removeBtn.style.backgroundColor = 'red';
+        removeBtn.style.backgroundColor = 'crimson';
         removeBtn.addEventListener('click', function(){
-            li.classList.add('remove');
-            li.addEventListener('transitionend', function(){
-                ul.removeChild(li)
+            todoDiv.classList.add('remove');
+            todoDiv.addEventListener('transitionend', function(){
+                ul.removeChild(todoDiv)
             })
         })
 

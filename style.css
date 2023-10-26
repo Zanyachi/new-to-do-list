@@ -1,16 +1,31 @@
 
 body {
-    background-color: rgb(176, 176, 244);
+    background-color: rgb(159, 159, 238);
+    color: aliceblue;
+    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif
 }
 
 .main-container {
     width: 50%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #text {
-    border: none;
     border-radius: 5px 0 0 5px;
+}
+
+#add-btn {
+    border-radius: 0 5px 5px 0;
+    background-color: blue;
+}
+
+#text, #add-btn{
+    padding: 0.7rem;
+    border: none;
 }
 
 .list-container {
@@ -21,50 +36,58 @@ body {
 
 .input-container {
     display: flex;
-    padding: 4px;
-    border-radius: 5px;
-}
-
-.list-items{
-    display: flex;
-}
-
-#add-btn {
-    border-radius: 0 5px 5px 0;
-    background-color: blue;
-    border: none
 }
 
 #add-btn:hover {
-    background-color: azure;
+    background-color: skyblue;
     cursor: pointer;
 }
 
 .checkBtn, .removeBtn{
-    padding: 5px;
     border: none;
     border-radius: 2px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: white;
 }
 
 .checkBtn:hover {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     cursor: pointer;
 }
 
 .removeBtn:hover {
-    background-color: orange;
+    /* background-color: orange; */
     cursor: pointer;
 }
 
-.list-items {
+.todo-list {
+    min-width: 30%;
+    padding: 0.5em;
+}
+
+.todo {
+    margin: 0.5rem;
+    padding: 10px;
     list-style-type: none;
-    padding: 5px;
-    background-color: beige;
+    border-radius: 0.9px;
+    background-color: rgb(146, 136, 136);
     display: flex;
-    margin-bottom: 2px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease-in;
+}
+
+.todo li{
+    flex: 1 1 0.5rem;
+}
+
+.list-items {
+    padding: 5px;
+    margin: 5px;
 }
 
 .remove{
     opacity: 0;
-    transition: opacity 2s ease-out;
+    transition: opacity 1s ease-out;
 }
